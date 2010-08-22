@@ -74,15 +74,24 @@
       32: 1,      // SPACE BAR
       13: 1,      // RETURN
       27: 'home', // ESCAPE
+      35: 'end',  // POS1
+      36: 'home', // END
       left: -1,
       right: 1
     }
 
     if (dir = DIRECTIONS[event.which || event]) {
       if (dir == 'home') {
-        event.preventDefault();
-        event.stopPropagation();
-        location.href = '/';
+        $('#instructions').slideUp(100);
+        setIndex(0);
+      } else if (dir == 'end') {
+        var end = 0;
+        $('div.content').each(function() {
+            end  = $(this).attr('slideId');
+        });
+
+        $('#instructions').slideUp(100);
+        setIndex(end);
       } else {
         $('#instructions').slideUp(100);
         setIndex(getIndex() + dir);
