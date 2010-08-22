@@ -80,7 +80,7 @@ class SlideDown
   end
 
   def local_stylesheets
-    Dir[Dir.pwd + '/*.stylesheets']
+    Dir[Dir.pwd + '/*.css'].map { |path| File.basename(path) }
   end
 
   def javascripts

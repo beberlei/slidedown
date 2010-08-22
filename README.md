@@ -77,9 +77,18 @@ For ERb:
 
 ### Requirements
 
+* open4
 * Nokogiri
 * makers-mark
 * pygments (for syntax highlighting)
+
+#### Install on Ubuntu
+
+    sudo apt-get install ruby1.8-dev rubygems python-pygments
+    sudo gem install open4
+    sudo gem install nokogiri
+    sudo gem install makers-mark
+    sudo ln -s /usr/local/bin/pygments /usr/bin/pygments
 
 ## Todo
 
